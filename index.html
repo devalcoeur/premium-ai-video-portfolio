@@ -33,6 +33,36 @@
 .hero-intro-sound:hover,.hero-intro-sound:focus-visible{background:#392816;border-color:#ffd78c}
 .hero-intro-sound[disabled]{opacity:.68;cursor:default}
 @media(max-width:650px){.hero-controls{right:7px;bottom:6px;gap:5px}.hero-intro-sound{padding:6px 8px;font-size:9px;letter-spacing:0}}
+
+/* Mobile cinema header: make camera/title larger and keep both controls visible.
+   The original wide footage is preserved without stretching or recoding. */
+@media (max-width: 650px) {
+  .hero-intro {
+    padding-bottom: 60px;
+  }
+  .hero-intro-video {
+    width: 112%;
+    max-width: none;
+    height: auto;
+    margin-left: -6%;
+    aspect-ratio: 1152 / 320;
+    object-fit: contain;
+  }
+  .hero-controls {
+    left: 9px;
+    right: 9px;
+    bottom: 10px;
+    gap: 8px;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  .hero-intro-sound {
+    min-width: 0;
+    white-space: nowrap;
+    font-size: clamp(9px, 2.6vw, 12px);
+    padding: 10px 11px;
+  }
+}
 </style></head><body>
 <header class="nav wrap"><a class="brand" href="#home">K. DEVALCOEUR</a><button class="menu-button" id="menuButton" aria-expanded="false">☰ МЕНЮ</button><nav class="navlinks" id="navLinks" aria-label="Разделы"><a href="#portfolio">Портфолио</a><a href="#about">Обо мне</a><a href="#services">Услуги</a><a href="#contact">Контакты</a></nav></header>
 <section class="hero-intro" id="home" aria-label="Кинематографичная заставка Premium Video Portfolio">
